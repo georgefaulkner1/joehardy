@@ -115,6 +115,7 @@
         font-size: 16px;
         padding: 5px;
         width: 640px;
+        color: black;
     }
 
     .image-card {
