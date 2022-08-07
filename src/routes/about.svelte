@@ -142,6 +142,10 @@
                 width: 360px;
             }
 
+            .about-details {
+                height: 880px;
+            }
+
         }
 
 </style>
