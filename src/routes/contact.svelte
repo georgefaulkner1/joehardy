@@ -94,6 +94,7 @@
         }
 
         .contact-area {
+            width: 100%;
             flex-wrap: wrap;
             flex-direction: column;
             align-items: center;
@@ -101,6 +102,7 @@
 
         .contact-block {
             margin-bottom: 10px;
+            width: 360px;
         }
 
     }

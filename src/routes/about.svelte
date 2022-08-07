@@ -123,4 +123,25 @@
         border: 1px solid #fff;
     }
 
+        /* Small Device */
+        @media only screen and (max-width: 768px) {
+
+            .container {
+                width: 100%;
+            }
+
+            .about-area {
+                width: 100%;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-block {
+                margin-bottom: 10px;
+                width: 360px;
+            }
+
+        }
+
 </style>
