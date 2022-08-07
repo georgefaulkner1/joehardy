@@ -86,4 +86,23 @@
         border: 1px solid #fff;
     }
 
+        /* Small Device */
+    @media only screen and (max-width: 768px) {
+
+        .container {
+            width: 100%;
+        }
+
+        .contact-area {
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-block {
+            margin-bottom: 10px;
+        }
+
+    }
+
 </style>

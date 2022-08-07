@@ -246,4 +246,23 @@
         font-size: 16px;
     }
 
+    /* Small Device */
+    @media only screen and (max-width: 768px) {
+
+        .container {
+            width: 100%;
+        }
+
+        .pricing-options {
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pricing-box {
+            margin-bottom: 10px;
+        }
+
+    }
+
 </style>

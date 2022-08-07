@@ -69,4 +69,11 @@ nav .logo img {
     transform-origin: bottom left;
 }
 
+    /* Small Device */
+    @media only screen and (max-width: 768px) {
+        nav {
+            min-width: 100% !important;
+        }
+    }
+
 </style>
