@@ -134,6 +134,7 @@
     .pricing-header h1 {
         font-weight: 600;
         font-size: 58px;
+        color: #fff;
     }
 
     .pricing-options {
@@ -152,6 +153,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-content: flex-start;
+        background-color: #454E9E !important;
     }
 
     .face-to-face {
@@ -179,7 +181,7 @@
     }
 
     .ind-price-value p, .ind-price-value h2 {
-        color: black;
+        color: #fff;
     }
 
     .ind-price-value p {
@@ -202,7 +204,7 @@
     }
 
     .ind-price-header h2 {
-        color: black;
+        color: #fff;
         font-weight: 600;
         font-size: 20px;
     }
@@ -214,7 +216,7 @@
     }
 
     .ind-short-desc p {
-        color: black;
+        color: #fff;
         font-weight: 600;
         font-size: 16px;
     }
@@ -224,7 +226,7 @@
     }
 
     .ind-price-details li {
-        color: black;
+        color: #fff;
         font-weight: 600;
         font-size: 16px;
         margin-top: 5px;
