@@ -88,13 +88,13 @@ nav .logo img {
         }
 
         nav .mobile-nav {
-            height: 80px;
-            width: 80px;
+            height: 40px;
+            width: 40px;
             border: 1px solid #fff;
             display: block;
         }
 
-        nav .logo {
+        nav .logo img {
             width: 40px !important;
         }
     }
