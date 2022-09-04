@@ -95,7 +95,7 @@ nav .logo img {
         }
 
         nav .logo {
-            width: 80px !important;
+            width: 40px !important;
         }
     }
 
