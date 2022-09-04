@@ -9,6 +9,9 @@
     
         <a href="/pricing" class="underline-hover">Pricing</a>
         <a href="/contact" class="underline-hover">Contact</a>
+
+        <div class="mobile-nav"></div>
+
     </nav>
 </header>
 
@@ -69,11 +72,32 @@ nav .logo img {
     transform-origin: bottom left;
 }
 
+.mobile-nav {
+    display: none;
+}
+
     /* Small Device */
     @media only screen and (max-width: 768px) {
         nav {
             min-width: 100% !important;
+            justify-content: space-between !important;
+        }
+
+        nav a {
+            display: none !important;
+        }
+
+        nav .mobile-nav {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #fff;
+            display: block;
+        }
+
+        nav .logo {
+            
         }
     }
+
 
 </style>
