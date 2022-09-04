@@ -80,7 +80,7 @@ nav .logo img {
     @media only screen and (max-width: 768px) {
         nav {
             min-width: 100% !important;
-            justify-content: space-between !important;
+            justify-content: space-around !important;
         }
 
         nav a {
