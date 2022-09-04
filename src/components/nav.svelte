@@ -96,6 +96,7 @@ nav .logo img {
 
         nav .logo img {
             width: 40px !important;
+            height: 40px !important;
         }
     }
 
