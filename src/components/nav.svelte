@@ -88,15 +88,15 @@ nav .logo img {
         }
 
         nav .mobile-nav {
-            height: 40px;
-            width: 40px;
+            height: 60px;
+            width: 60px;
             border: 1px solid #fff;
             display: block;
         }
 
         nav .logo img {
-            width: 40px !important;
-            height: 40px !important;
+            width: 60px !important;
+            height: 60px !important;
         }
     }
 
