@@ -91,6 +91,8 @@ nav .logo img {
     @media only screen and (max-width: 768px) {
         header {
             position: fixed;
+            background-color: black;
+            margin-bottom: 100px;
         }
 
         nav {
