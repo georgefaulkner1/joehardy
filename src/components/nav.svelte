@@ -1,3 +1,7 @@
+<svelte:head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</svelte:head>
+
 <header>
     <nav>
         <a href="/" class="underline-hover">Home</a>
@@ -10,7 +14,9 @@
         <a href="/pricing" class="underline-hover">Pricing</a>
         <a href="/contact" class="underline-hover">Contact</a>
 
-        <div class="mobile-nav"></div>
+        <div class="mobile-nav">
+            <i class="fa fa-bars"></i>
+        </div>
 
     </nav>
 </header>
@@ -76,6 +82,11 @@ nav .logo img {
     display: none;
 }
 
+.mobile-nav i {
+    color: #fff;
+    font-size: 32px;
+}
+
     /* Small Device */
     @media only screen and (max-width: 768px) {
         nav {
@@ -91,7 +102,9 @@ nav .logo img {
             height: 60px;
             width: 60px;
             border: 1px solid #fff;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         nav .logo img {
