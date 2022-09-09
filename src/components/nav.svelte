@@ -89,6 +89,10 @@ nav .logo img {
 
     /* Small Device */
     @media only screen and (max-width: 768px) {
+        header {
+            position: fixed;
+        }
+
         nav {
             min-width: 100% !important;
             justify-content: space-between !important;
