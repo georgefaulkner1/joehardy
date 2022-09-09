@@ -91,7 +91,7 @@ nav .logo img {
     @media only screen and (max-width: 768px) {
         nav {
             min-width: 100% !important;
-            justify-content: space-around !important;
+            justify-content: space-between !important;
         }
 
         nav a {
@@ -101,10 +101,14 @@ nav .logo img {
         nav .mobile-nav {
             height: 60px;
             width: 60px;
-            border: 1px solid #fff;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 20px;
+        }
+
+        nav .logo {
+            margin-left: 20px;
         }
 
         nav .logo img {
