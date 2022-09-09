@@ -92,7 +92,7 @@ nav .logo img {
         header {
             position: fixed;
             background-color: black;
-            margin-bottom: 100px;
+            top: 0px;
         }
 
         nav {
