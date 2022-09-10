@@ -55,10 +55,10 @@
 
 <div class="drop-down-menu">
     <div class="inner-menu-box">
-        <a href="#" class="ind-menu">Home</a>
-        <a href="#" class="ind-menu">About</a>
-        <a href="#" class="ind-menu">Pricing</a>
-        <a href="#" class="ind-menu">Contact</a>
+        <a href="/" class="ind-menu">Home</a>
+        <a href="/about" class="ind-menu">About</a>
+        <a href="/pricing" class="ind-menu">Pricing</a>
+        <a href="/contact" class="ind-menu">Contact</a>
     </div>
 </div>
 
@@ -192,6 +192,7 @@ nav .logo img {
             color: black;
             font-weight: 500;
             text-decoration: none;
+            width: 100%;
         }
     }
 
