@@ -1,3 +1,22 @@
+<script>
+
+    let menu_status = false
+
+    function toggleMenu(){
+        let menu = document.querySelector(".drop-down-menu")
+        if(menu_status == true){
+            console.log("close")
+            menu.style.height = "0px"
+            return menu_status = false
+        }else{
+            console.log("open")
+            menu.style.height = "200px"
+            return menu_status = true
+        }
+    }
+    
+</script>
+
 <svelte:head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </svelte:head>
@@ -15,11 +34,13 @@
         <a href="/contact" class="underline-hover">Contact</a>
 
         <div class="mobile-nav">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" on:click={toggleMenu}></i>
         </div>
 
     </nav>
 </header>
+
+<div class="drop-down-menu"></div>
 
 
 <style>
@@ -82,6 +103,10 @@ nav .logo img {
     display: none;
 }
 
+.drop-down-menu {
+    display: none;
+}
+
 .mobile-nav i {
     color: #fff;
     font-size: 32px;
@@ -120,6 +145,16 @@ nav .logo img {
         nav .logo img {
             width: 60px !important;
             height: 60px !important;
+        }
+
+        .drop-down-menu {
+            height: 0px;
+            transition: height 1s;
+            width: 100%;
+            background-color: #fff;
+            position: fixed;
+            top: 100px;
+            display: block;
         }
     }
 
