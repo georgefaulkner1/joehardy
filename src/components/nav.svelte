@@ -193,6 +193,7 @@ nav .logo img {
             font-weight: 500;
             text-decoration: none;
             width: 100%;
+            text-align: center;
         }
     }
 
