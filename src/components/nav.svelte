@@ -4,13 +4,26 @@
 
     function toggleMenu(){
         let menu = document.querySelector(".drop-down-menu")
+        let indMenu = document.querySelectorAll(".ind-menu")
         if(menu_status == true){
             console.log("close")
             menu.style.height = "0px"
+            for(let i = 4; i >= 1; i--){
+                const self = i - 1
+                indMenu[self].style.display = "none"
+            }
             return menu_status = false
         }else{
             console.log("open")
-            menu.style.height = "200px"
+            menu.style.height = "400px"
+
+            for(let i = 1; i <= indMenu.length; i++){
+                setTimeout(e => {
+                    const self = i - 1
+                    indMenu[self].style.display = "flex"
+                }, i * 180)
+            }
+
             return menu_status = true
         }
     }
@@ -40,7 +53,14 @@
     </nav>
 </header>
 
-<div class="drop-down-menu"></div>
+<div class="drop-down-menu">
+    <div class="inner-menu-box">
+        <a href="#" class="ind-menu">Home</a>
+        <a href="#" class="ind-menu">About</a>
+        <a href="#" class="ind-menu">Pricing</a>
+        <a href="#" class="ind-menu">Contact</a>
+    </div>
+</div>
 
 
 <style>
@@ -149,12 +169,29 @@ nav .logo img {
 
         .drop-down-menu {
             height: 0px;
-            transition: height 1s;
+            transition: height 0.8s;
             width: 100%;
             background-color: #fff;
             position: fixed;
             top: 100px;
             display: block;
+        }
+
+        .inner-menu-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner-menu-box a {
+            height: 100px;
+            display: none;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
         }
     }
 
