@@ -54,6 +54,7 @@
         margin: 0;
         color: #fff;
         font-family: 'Poppins', sans-serif;
+        background-color: black;
     }
 
     section {
@@ -64,7 +65,7 @@
     }
 
     .home {
-        background-image: url("https://i.ibb.co/SKD0nQW/home-background.jpg");    
+        background-image: url("https://i.ibb.co/LJXvwCk/home-background-scaled.png");    
         background-repeat: no-repeat;
         background-size: cover;
     }
