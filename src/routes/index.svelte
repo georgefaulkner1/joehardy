@@ -138,6 +138,12 @@
         .opening {
             max-width: 300px;
         }
+
+        .home {
+            background-image: url("https://i.ibb.co/3v3j5jy/home-mobile-background.jpg");    
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
     }
 
 

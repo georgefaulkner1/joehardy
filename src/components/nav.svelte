@@ -139,7 +139,7 @@ nav .logo img {
     @media only screen and (max-width: 768px) {
         header {
             position: fixed;
-            background-color: black;
+            background-color: none;
             top: 0px;
             height: 100px;
         }
