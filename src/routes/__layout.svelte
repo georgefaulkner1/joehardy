@@ -2,7 +2,7 @@
     import Nav from "../components/nav.svelte"
 </script>
 
-    <Nav/>
+
     <slot></slot>
 
 <style>
@@ -13,16 +13,5 @@
         padding: 0;
     }
 
-    :global(body) {
-        margin: 0 !important;
-        height: 100vh !important;
-        width: 100vw !important;
-    }
-
-    :global(html) {
-        min-height: 100vh !important;
-        height: 100vh !important;
-        width: 100vw !important;
-    }
 
 </style>

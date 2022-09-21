@@ -36,15 +36,15 @@
 
 <header>
     <nav>
-        <a href="/" class="underline-hover">Home</a>
-        <a href="/about" class="underline-hover">About</a>
+        <a href="#home" class="underline-hover">Home</a>
+        <a href="#about" class="underline-hover">About</a>
     
         <div class="logo">
-            <img src="./hf.png">
+            <img src="./hf.png" alt="">
         </div>
     
-        <a href="/pricing" class="underline-hover">Pricing</a>
-        <a href="/contact" class="underline-hover">Contact</a>
+        <a href="#pricing" class="underline-hover">Pricing</a>
+        <a href="#contact" class="underline-hover">Contact</a>
 
         <div class="mobile-nav">
             <i class="fa fa-bars" on:click={toggleMenu}></i>
@@ -64,15 +64,18 @@
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 100px;
+    height: 200px;
     margin: 0;
+    position: fixed;
+    z-index: 10;
+    background-color: none;
 }   
 
 nav {
@@ -85,14 +88,14 @@ nav {
 }
 
 nav a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
 }
 
 nav .logo img {
-    height: 100px;
+    height: 200px;
     filter: invert(1);
 }
 
@@ -138,6 +141,7 @@ nav .logo img {
             position: fixed;
             background-color: black;
             top: 0px;
+            height: 100px;
         }
 
         nav {
