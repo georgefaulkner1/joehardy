@@ -64,7 +64,7 @@
     }
 
     .home {
-        background-image: url("./background-image.png");    
+        background-image: url("https://wallpapercave.com/wp/wp7353778.jpg");    
         background-repeat: no-repeat;
         background-size: cover;
     }
