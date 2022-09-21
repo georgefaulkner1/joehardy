@@ -64,7 +64,7 @@
     }
 
     .home {
-        background-image: url("./home-background.jpeg");    
+        background-image: url("./home-background.jpg");    
         background-repeat: no-repeat;
         background-size: cover;
     }
