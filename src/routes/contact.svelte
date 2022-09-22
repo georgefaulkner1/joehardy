@@ -39,7 +39,7 @@
 
 <section class="home" id="home">
     <div class=" opening" in:fly={{ x: -200, duration: 2000 }}>
-        <h2>Discover your Potential, the Hardy way!</h2>
+        <h2>Contact</h2>
         <h1>Personal training, Online Programs & Nutritional plans</h1>
         <button>Discover your Potential</button>
     </div>

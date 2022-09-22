@@ -1,4 +1,5 @@
 <script>
+    import { fade, fly } from "svelte/transition"
 
     let menu_status = false
 
@@ -27,6 +28,7 @@
             return menu_status = true
         }
     }
+
     
 </script>
 
@@ -36,15 +38,15 @@
 
 <header>
     <nav>
-        <a href="#home" class="underline-hover">Home</a>
-        <a href="#about" class="underline-hover">About</a>
+        <a href="/" class="underline-hover">Home</a>
+        <a href="/about" class="underline-hover">About</a>
     
         <div class="logo">
             <img src="./hf.png" alt="">
         </div>
     
-        <a href="#pricing" class="underline-hover">Pricing</a>
-        <a href="#contact" class="underline-hover">Contact</a>
+        <a href="/pricing" class="underline-hover">Pricing</a>
+        <a href="/contact" class="underline-hover">Contact</a>
 
         <div class="mobile-nav">
             <i class="fa fa-bars" on:click={toggleMenu}></i>
@@ -53,12 +55,12 @@
     </nav>
 </header>
 
-<div class="drop-down-menu">
+<div class="drop-down-menu" out:fade>
     <div class="inner-menu-box">
-        <a href="/" class="ind-menu">Home</a>
-        <a href="/" class="ind-menu">About</a>
-        <a href="/" class="ind-menu">Pricing</a>
-        <a href="/" class="ind-menu">Contact</a>
+        <a href="/" class="ind-menu" on:click={toggleMenu}>Home</a>
+        <a href="/about" class="ind-menu" on:click={toggleMenu}>About</a>
+        <a href="/pricing" class="ind-menu" on:click={toggleMenu}>Pricing</a>
+        <a href="/contact" class="ind-menu" on:click={toggleMenu}>Contact</a>
     </div>
 </div>
 
