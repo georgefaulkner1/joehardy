@@ -56,9 +56,9 @@
 <div class="drop-down-menu">
     <div class="inner-menu-box">
         <a href="/" class="ind-menu">Home</a>
-        <a href="/about" class="ind-menu">About</a>
-        <a href="/pricing" class="ind-menu">Pricing</a>
-        <a href="/contact" class="ind-menu">Contact</a>
+        <a href="/" class="ind-menu">About</a>
+        <a href="/" class="ind-menu">Pricing</a>
+        <a href="/" class="ind-menu">Contact</a>
     </div>
 </div>
 
@@ -139,7 +139,7 @@ nav .logo img {
     @media only screen and (max-width: 768px) {
         header {
             position: fixed;
-            background-color: none;
+            background-color: black;
             top: 0px;
             height: 100px;
         }
@@ -176,6 +176,7 @@ nav .logo img {
             transition: height 0.8s;
             width: 100%;
             background-color: #fff;
+            opacity: 0.99;
             position: fixed;
             top: 100px;
             display: block;
@@ -192,12 +193,13 @@ nav .logo img {
             height: 100px;
             display: none;
             align-items: center;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: black;
             font-weight: 500;
             text-decoration: none;
             width: 100%;
             text-align: center;
+            justify-content: center;
         }
     }
 
