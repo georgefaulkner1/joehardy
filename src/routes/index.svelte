@@ -4,27 +4,9 @@
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
 
-    /*
-    onMount( async () => {
-        const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-                console.log(entry)
-                //console.log(`${entry.target.classList} - `)
-                if(entry.isIntersecting){
-                    entry.target.classList.add("show")
-                }else{
-                    entry.target.classList.remove("show")
-                }
-            })
-        })
-
-        const hiddenElements = document.querySelectorAll(".hidden")
-        hiddenElements.forEach((el) => observer.observe(el))
-    })
-    */
-
+    let ready = false
     onMount(async () => {
-
+        ready = true
     })
 
     function animateOpening(){
@@ -38,11 +20,13 @@
 <Nav/>
 
 <section class="home" id="home">
+    {#if ready}
     <div class=" opening" in:fly={{ x: -200, duration: 2000 }}>
         <h2>Discover your Potential, the Hardy way!</h2>
         <h1>Personal training, Online Programs & Nutritional plans</h1>
         <button>Discover your Potential</button>
     </div>
+    {/if}
 </section>
 
 
