@@ -180,6 +180,7 @@ nav .logo img {
             position: fixed;
             top: 100px;
             display: block;
+            z-index: 11;
         }
 
         .inner-menu-box {
