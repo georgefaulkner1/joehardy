@@ -17,7 +17,7 @@
 
 <section class="home" id="home">
     {#if ready}
-        <div class="hero" in:fly={{ x: -200, duration: 2000 }}>
+        <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
             <h2>Pricing Page</h2>
             <h1>Personal training, Online Programs & Nutritional plans</h1>
             <button>Discover your Potential</button>
