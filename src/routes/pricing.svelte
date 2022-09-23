@@ -4,32 +4,10 @@
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
 
-    /*
-    onMount( async () => {
-        const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-                console.log(entry)
-                //console.log(`${entry.target.classList} - `)
-                if(entry.isIntersecting){
-                    entry.target.classList.add("show")
-                }else{
-                    entry.target.classList.remove("show")
-                }
-            })
-        })
-
-        const hiddenElements = document.querySelectorAll(".hidden")
-        hiddenElements.forEach((el) => observer.observe(el))
-    })
-    */
-
+    let ready = false
     onMount(async () => {
-
+        ready = true
     })
-
-    function animateOpening(){
-        document.querySelector(".opening").classList.add("showOpening")
-    }
 
 </script>
 
@@ -38,11 +16,13 @@
 <Nav/>
 
 <section class="home" id="home">
-    <div class=" opening" in:fly={{ x: -200, duration: 2000 }}>
-        <h2>Pricing</h2>
-        <h1>Personal training, Online Programs & Nutritional plans</h1>
-        <button>Discover your Potential</button>
-    </div>
+    {#if ready}
+        <div class="hero" in:fly={{ x: -200, duration: 2000 }}>
+            <h2>Pricing Page</h2>
+            <h1>Personal training, Online Programs & Nutritional plans</h1>
+            <button>Discover your Potential</button>
+        </div>
+    {/if}
 </section>
 
 
@@ -72,7 +52,7 @@
         background-size: cover;
     }
 
-    .opening {
+    .hero {
         max-width: 1000px;
         display: flex;
         flex-direction: column;
@@ -81,7 +61,7 @@
         text-align: center;
     }
 
-    .opening button {
+    .hero button {
         margin-top: 5px;
         width: 280px;
         height: 50px;
@@ -95,12 +75,12 @@
         transition: background-color 1s, color 1s;
     }
 
-    .opening button:hover {
+    .hero button:hover {
         color: black;
         background-color: #fff;
     }
 
-    .opening h1, .opening h2 {
+    .hero h1, .hero h2 {
         margin: 10px 0px 10px 0px;
     }
 
@@ -113,12 +93,6 @@
         filter: blur(5px);
         transform: translateX(-100%);
         transition: all 2s;
-    }
-
-    :global(.showOpening) {
-        opacity: 1 !important;
-        filter: blur(0) !important;
-        transform: translateX(0) !important;
     }
 
     :global(.show) {
@@ -137,7 +111,7 @@
             font-size: 24px;
         }
 
-        .opening {
+        .hero {
             max-width: 300px;
         }
 

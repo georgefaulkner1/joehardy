@@ -13,5 +13,14 @@
         padding: 0;
     }
 
+    :global(body) {
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow-y: scroll; 
+    }
+
+    :global(body::-webkit-scrollbar) {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
 
 </style>
