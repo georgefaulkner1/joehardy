@@ -77,7 +77,7 @@ header {
     margin: 0;
     position: fixed;
     z-index: 10;
-    background-color: none;
+    background-color: black;
 }   
 
 nav {
