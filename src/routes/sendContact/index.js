@@ -4,7 +4,7 @@ export async function POST({ request }) {
   const data = await request.json()
   console.log(data)
   
-  const {name, email, phone, message} = JSON.parse(data)
+  const {name, email, phone, message} = JSON.parse(JSON.stringify(data))
 
   if(name.length > 1 && email.length > 1 && message.length > 1){
 
