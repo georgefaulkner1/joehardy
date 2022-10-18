@@ -211,6 +211,7 @@
             padding-left: 10px;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
+            border-radius: 0px;
         }
     }
 
