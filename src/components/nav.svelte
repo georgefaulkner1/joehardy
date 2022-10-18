@@ -16,7 +16,7 @@
             return menu_status = false
         }else{
             console.log("open")
-            menu.style.height = "600px"
+            menu.style.height = "480px"
 
             for(let i = 1; i <= indMenu.length; i++){
                 setTimeout(e => {
@@ -197,7 +197,7 @@ nav .logo img {
         }
 
         .inner-menu-box a {
-            height: 100px;
+            height: 80px;
             display: none;
             align-items: center;
             font-family: 'Poppins', sans-serif;
