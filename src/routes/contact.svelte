@@ -10,17 +10,50 @@
         //sendMail()
     })
 
+    let name = ""
+    let email = ""
+    let phone = ""
+    let message = "";
+    let messagePending = false
+
+    const validateEmail = (email) => {
+        var re = /\S+@\S+\.\S+/
+        return re.test(email)
+    }
+
     async function sendMail(){
-        console.log("Called Mail")
-        let res = await fetch("/sendContact", {
-            method: "GET"
-        })
+        if(messagePending === false){
+            if(validateEmail(email) && name.length > 1 && message.length > 1){
+                console.log("Called Mail")
+                let res = await fetch("/sendContact", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone,
+                        message
+                    })
+                })
+                
+                messagePending = true
 
-        const json = await res.json()
-        const result = JSON.stringify(json)
+                const json = await res.json()
+                const result = JSON.stringify(json)
 
-        console.log(result)
+                if(result){
+                    messagePending = false
+                    if(result.sent == "Confirmed"){
+                        alert("Message Sent!")
+                    }
+                }
 
+                console.log(result)
+            }else{
+                console.log(validateEmail(email))
+                console.log("Requirements not met")
+                messagePending = false
+            }   
+        }
     }
 
 </script>
@@ -36,25 +69,28 @@
             <div class="email-contact">
                 <div class="inputBox">
                     <label>Name *</label>
-                    <input type="text" id="nameInput">
+                    <input type="text" id="nameInput" bind:value={name}/>
                 </div>
 
                 
                 <div class="inputBox">
                     <label>Email *</label>
-                    <input type="text" id="emailInput">
+                    <input type="text" id="emailInput" bind:value={email}/>
                 </div>
 
                 
                 <div class="inputBox">
                     <label>Mobile number</label>
-                    <input type="number" id="mobileNumberInput">
+                    <input type="number" id="mobileNumberInput" bind:value={phone}/>
                 </div>
 
                 <div class="inputBox">
                     <label>Message *</label>
-                    <textarea id="messageInput"></textarea>
+                    <textarea id="messageInput" bind:value={message}></textarea>
                 </div>
+
+                <button on:click={sendMail}>Send message</button>
+
             </div>
 
         </div>
@@ -99,10 +135,9 @@
 
     .hero button {
         margin-top: 5px;
-        width: 280px;
+        width: 100%;
         height: 50px;
         border: 2px solid #fff;
-        border-radius: 9999px;
         background: none;
         color: #fff;
         font-size: 18px;
@@ -112,8 +147,8 @@
     }
 
     .hero button:hover {
-        color: black;
-        background-color: #fff;
+        color: #fff;
+        background-color: #454E9E;
     }
 
     .hero h1, .hero h2 {
