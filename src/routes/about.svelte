@@ -35,45 +35,56 @@
                 achieve their dreams and goals!
             </p>
 
-            <p class="mobile-about">
-                I offer a number of different services to help you
-                achieve your goals. Online coaching is the most
-                popular and most effective way for you to
-                improve and achieve your wants in the gym and
-                in everyday life. Online coaching provides a
-                structure to your life, gives an in depth
-                description of what to do in the gym and why
-                you are doing it. Each program is tailored to the
-                client which takes into account the clients goals,
-                lifestyle, diet etc. This results in my clients feel
-                awesome and build their best body! So, don't
-                worry if you work unusual hours, as long as you
-                have an hour spare in the day from when you
-                wake up, to when you go to sleep, you can train.
-                No excuses!
-            </p>
+            <div class="family">
 
-            <p class="mobile-about">
-                Online coaching is also the most cost-effective
-                way of hiring a coach. To break it down, the
-                average cost of a personal trainer can be
-                anywhere between £30-£40 per hour. If you
-                train 3 times a week with a personal trainer,
-                that's a monthly cost of £360-£480. That is for
-                12 hours worth of work a month! Whereas with
-                Online coaching you can get up to 30 hours
-                worth of personal training per month worth
-                £200. So, if you train 3 times a week, this would
-                work out as £16 per hour instead of the costly
-                £30-£40 per hour whilst getting the same, if not
-                better results as you would training Face to
-                Face! This also gets cheaper the more you train.
-                If you require 4 days of training out of the 7 days
-                per week. monthly that would add up to 16
-                hours per month which would be the equivalent
-                of £12.50 per hour! The more you train, the
-                cheaper it is, the better the results…
-            </p>
+                <div class="group">
+                    <p class="mobile-about">
+                        I offer a number of different services to help you
+                        achieve your goals. Online coaching is the most
+                        popular and most effective way for you to
+                        improve and achieve your wants in the gym and
+                        in everyday life. Online coaching provides a
+                        structure to your life, gives an in depth
+                        description of what to do in the gym and why
+                        you are doing it. Each program is tailored to the
+                        client which takes into account the clients goals,
+                        lifestyle, diet etc. This results in my clients feel
+                        awesome and build their best body! So, don't
+                        worry if you work unusual hours, as long as you
+                        have an hour spare in the day from when you
+                        wake up, to when you go to sleep, you can train.
+                        No excuses!
+                    </p>
+        
+                    <p class="mobile-about">
+                        Online coaching is also the most cost-effective
+                        way of hiring a coach. To break it down, the
+                        average cost of a personal trainer can be
+                        anywhere between £30-£40 per hour. If you
+                        train 3 times a week with a personal trainer,
+                        that's a monthly cost of £360-£480. That is for
+                        12 hours worth of work a month! Whereas with
+                        Online coaching you can get up to 30 hours
+                        worth of personal training per month worth
+                        £200. So, if you train 3 times a week, this would
+                        work out as £16 per hour instead of the costly
+                        £30-£40 per hour whilst getting the same, if not
+                        better results as you would training Face to
+                        Face! This also gets cheaper the more you train.
+                        If you require 4 days of training out of the 7 days
+                        per week. monthly that would add up to 16
+                        hours per month which would be the equivalent
+                        of £12.50 per hour! The more you train, the
+                        cheaper it is, the better the results…
+                    </p>
+                </div>
+
+                <div class="image-container">
+                    <img src="./about2.jpg" alt="">
+                </div>
+
+
+            </div>
 
             <p class="mobile-about">
                 Join the team today! It does not matter where
@@ -112,9 +123,10 @@
     }
 
     .home {
-        background-image: url("https://i.ibb.co/LJXvwCk/home-background-scaled.png");    
+        background-image: none; /*url("https://i.ibb.co/LJXvwCk/home-background-scaled.png") */    
         background-repeat: no-repeat;
         background-size: cover;
+        background-color: black;
     }
 
     .hero {
@@ -172,9 +184,14 @@
         width: 100%;
         border-radius: 6px;
         margin-bottom: 10px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 22px;
+        padding-bottom: 22px;
         background-color: #454E9E;
+        transition: all 0.5s;
+    }
+
+    details:hover {
+        opacity: 0.8;
     }
 
     details p {
@@ -194,6 +211,32 @@
         font-weight: 800;
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    .family {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: 0px solid #fff;
+    }
+
+    .group {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0px solid #fff;
+    }
+
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .image-container img {
+        height: 400px;
+        box-shadow: inset 0 0 100px black;
     }
 
 
@@ -220,7 +263,8 @@
         }
 
         .mobile-about {
-            margin-top: 150px;
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         details p {
@@ -232,6 +276,23 @@
             margin-left: 5px;
             margin-right: 5px;
             width: calc(100% - 40px);
+        }
+
+        .family {
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            height: 200px;
+            box-shadow: inset 0 0 100px black;
+        }
+
+        .group {
+            width: 100%;
+        }
+
+        .image-container {
+            width: 100%;
         }
     }
 

@@ -1,5 +1,6 @@
 <script>
     import { fade, fly } from "svelte/transition"
+    import { goto } from '$app/navigation'
 
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
@@ -8,6 +9,10 @@
     onMount(async () => {
         ready = true
     })
+
+    function enquireDirect(){
+        goto("/contact")
+    }
 
 </script>
 
@@ -335,7 +340,6 @@
             background-image: none !important; 
             background-repeat: no-repeat;
             background-size: contain;
-            margin-top: 100px;
             height: calc(100vh - 100px);
         }
 
@@ -375,6 +379,8 @@
         
         .pricing-box {
             margin-bottom: 10px;
+            width: 300px;
+            height: 440px;
         }
         
         .ind-short-desc p {

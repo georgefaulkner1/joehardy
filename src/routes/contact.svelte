@@ -184,7 +184,6 @@
             background-image: url("https://i.ibb.co/3v3j5jy/home-mobile-background.jpg");    
             background-repeat: no-repeat;
             background-size: contain;
-            margin-top: 100px;
             height: calc(100vh - 100px);
         }
 

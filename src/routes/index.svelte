@@ -1,5 +1,6 @@
 <script>
     import { fade, fly } from "svelte/transition"
+    import { goto } from '$app/navigation'
 
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
@@ -10,9 +11,7 @@
     })
 
     function DiscoverButton(){
-        return {
-            redirect: "/pricing"
-        }
+        goto("/pricing")
     }
 
 </script>

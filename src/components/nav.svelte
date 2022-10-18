@@ -22,7 +22,7 @@
                 setTimeout(e => {
                     const self = i - 1
                     indMenu[self].style.display = "flex"
-                }, i * 180)
+                }, i * 100)
             }
 
             return menu_status = true

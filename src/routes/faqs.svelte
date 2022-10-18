@@ -158,9 +158,14 @@
         width: 1200px;
         border-radius: 6px;
         margin-bottom: 10px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 22px;
+        padding-bottom: 22px;
         background-color: #454E9E;
+        transition: all 0.5s;
+    }
+
+    details:hover {
+        opacity: 0.8;
     }
 
     details p {
@@ -216,6 +221,8 @@
 
         details {
             width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
 
         summary {
