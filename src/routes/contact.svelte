@@ -42,7 +42,7 @@
 
                 if(result){
                     messagePending = false
-                    if(result.sent == "Confirmed"){
+                    if(result.body.sent == "Confirmed"){
                         alert("Message Sent!")
                     }
                 }
