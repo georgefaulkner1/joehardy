@@ -189,7 +189,7 @@
         }
 
         .inputBox {
-            width: 350px;
+            width: 100%;
             margin: 0;
             display: flex;
             flex-wrap: wrap;
