@@ -39,7 +39,7 @@ export async function POST({ request }) {
   }else {
     console.log("Info Not corr")
     return {
-      body: {error: "Info not required!"}
+      body: {error: 400}
     }
   }
 
