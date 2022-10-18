@@ -337,7 +337,7 @@
 
         .home {
             background-color: black !important;  
-            background-image: none !important; 
+            background-image: url("https://i.ibb.co/3v3j5jy/home-mobile-background.jpg"); 
             background-repeat: no-repeat;
             background-size: contain;
             height: calc(100vh - 100px);
@@ -347,6 +347,7 @@
             width: 100%;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 220px;
         }
 
         .ind-price-header {
