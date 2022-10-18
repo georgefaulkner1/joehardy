@@ -16,9 +16,8 @@
 <section class="home" id="home">
     {#if ready}
         <div class="hero index" in:fly={{ x: -200, duration: 2000 }} out:fade>
-            <h2 class="header-title">Discover your Potential, the Hardy way!</h2>
-            <h1>Personal training, Online Programs & Nutritional plans</h1>
-            <button>Discover your Potential</button>
+            <h2 class="header-title"></h2>
+            <h1>Coming soon!</h1>
         </div>
     {/if}
 </section>

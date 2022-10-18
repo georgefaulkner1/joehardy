@@ -7,20 +7,56 @@
     let ready = false
     onMount(async () => {
         ready = true
+        //sendMail()
     })
+
+    async function sendMail(){
+        console.log("Called Mail")
+        let res = await fetch("/sendContact", {
+            method: "GET"
+        })
+
+        const json = await res.json()
+        const result = JSON.stringify(json)
+
+        console.log(result)
+
+    }
 
 </script>
 
 
 
-<Nav/>
-
 <section class="home" id="home">
     {#if ready}
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
-            <h2>Contact Page</h2>
-            <h1>Personal training, Online Programs & Nutritional plans</h1>
-            <button>Discover your Potential</button>
+            <h2 class="header-title">Contact me!</h2>
+            <p>Want more information? Get in touch below.</p>
+
+            <div class="email-contact">
+                <div class="inputBox">
+                    <label>Name *</label>
+                    <input type="text" id="nameInput">
+                </div>
+
+                
+                <div class="inputBox">
+                    <label>Email *</label>
+                    <input type="text" id="emailInput">
+                </div>
+
+                
+                <div class="inputBox">
+                    <label>Mobile number</label>
+                    <input type="number" id="mobileNumberInput">
+                </div>
+
+                <div class="inputBox">
+                    <label>Message *</label>
+                    <textarea id="messageInput"></textarea>
+                </div>
+            </div>
+
         </div>
     {/if}
 </section>
@@ -49,7 +85,7 @@
     .home {
         background-image: url("https://i.ibb.co/LJXvwCk/home-background-scaled.png");    
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
     }
 
     .hero {
@@ -101,6 +137,35 @@
         transform: translateX(0) !important;
     }
 
+    .inputBox {
+        width: 800px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .inputBox label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    .inputBox input, .inputBox textarea {
+        width: 800px;
+        height: 50px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+    }
+
+    .inputBox textarea {
+        height: 100px;
+    }
+
     /* Small Device */
     @media only screen and (max-width: 768px) {
         section h1 {
@@ -121,6 +186,31 @@
             background-size: contain;
             margin-top: 100px;
             height: calc(100vh - 100px);
+        }
+
+        .inputBox {
+            width: 350px;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .inputBox label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .inputBox input, .inputBox textarea {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
         }
     }
 

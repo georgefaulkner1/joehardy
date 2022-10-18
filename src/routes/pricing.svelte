@@ -13,12 +13,10 @@
 
 
 
-<Nav/>
-
 <section class="home" id="home">
     {#if ready}
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
-            <h2>Pricing</h2>
+            <h2 class="header-title">Pricing</h2>
 
             <div class="pricing-container">
 

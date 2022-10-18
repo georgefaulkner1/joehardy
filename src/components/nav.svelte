@@ -9,14 +9,14 @@
         if(menu_status == true){
             console.log("close")
             menu.style.height = "0px"
-            for(let i = 4; i >= 1; i--){
+            for(let i = 6; i >= 1; i--){
                 const self = i - 1
                 indMenu[self].style.display = "none"
             }
             return menu_status = false
         }else{
             console.log("open")
-            menu.style.height = "400px"
+            menu.style.height = "600px"
 
             for(let i = 1; i <= indMenu.length; i++){
                 setTimeout(e => {
@@ -40,6 +40,7 @@
     <nav>
         <a href="/" class="underline-hover">Home</a>
         <a href="/about" class="underline-hover">About</a>
+        <a href="/faqs" class="underline-hover">FAQs</a>
     
         <div class="logo">
             <img src="./hf.png" alt="">
@@ -47,6 +48,7 @@
     
         <a href="/pricing" class="underline-hover">Pricing</a>
         <a href="/contact" class="underline-hover">Contact</a>
+        <a href="/store" class="underline-hover">Store</a>
 
         <div class="mobile-nav">
             <i class="fa fa-bars" on:click={toggleMenu}></i>
@@ -59,8 +61,10 @@
     <div class="inner-menu-box">
         <a href="/" class="ind-menu" on:click={toggleMenu}>Home</a>
         <a href="/about" class="ind-menu" on:click={toggleMenu}>About</a>
+        <a href="/faqs" class="ind-menu" on:click={toggleMenu}>FAQs</a>
         <a href="/pricing" class="ind-menu" on:click={toggleMenu}>Pricing</a>
         <a href="/contact" class="ind-menu" on:click={toggleMenu}>Contact</a>
+        <a href="/store" class="ind-menu" on:click={toggleMenu}>Store</a>
     </div>
 </div>
 

@@ -13,87 +13,78 @@
 
 
 
-<Nav/>
-
 <section class="home" id="home">
     {#if ready}
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
-            <h2>About Me</h2>
+            <h2 class="header-title">About Me</h2>
             <p class="mobile-about">
                 I have been in the gym ever since I was 12 years
-old. The gym, fitness, health & well being is
-something I'm extremely passionate about as I
-have spent a large part of my life studying and
-being in an environment that promotes health
-and well being. I train at the gym myself 6 times
-a week, therefore I know and have a lot of
-experience in training in the gym as I have been
-training for the better part of 7 years and
-counting. I grew a passion for sharing my
-knowledge to people in the gym when I started
-helping my friends with what to do at the gym.
-Since then, I knew I wanted to be a personal
-trainer with my own business helping others
-achieve their dreams and goals!
+                old. The gym, fitness, health & well being is
+                something I'm extremely passionate about as I
+                have spent a large part of my life studying and
+                being in an environment that promotes health
+                and well being. I train at the gym myself 6 times
+                a week, therefore I know and have a lot of
+                experience in training in the gym as I have been
+                training for the better part of 7 years and
+                counting. I grew a passion for sharing my
+                knowledge to people in the gym when I started
+                helping my friends with what to do at the gym.
+                Since then, I knew I wanted to be a personal
+                trainer with my own business helping others
+                achieve their dreams and goals!
             </p>
 
-            
-            <h2>FAQs</h2>
+            <p class="mobile-about">
+                I offer a number of different services to help you
+                achieve your goals. Online coaching is the most
+                popular and most effective way for you to
+                improve and achieve your wants in the gym and
+                in everyday life. Online coaching provides a
+                structure to your life, gives an in depth
+                description of what to do in the gym and why
+                you are doing it. Each program is tailored to the
+                client which takes into account the clients goals,
+                lifestyle, diet etc. This results in my clients feel
+                awesome and build their best body! So, don't
+                worry if you work unusual hours, as long as you
+                have an hour spare in the day from when you
+                wake up, to when you go to sleep, you can train.
+                No excuses!
+            </p>
 
-            <details>
-                <summary>How do you help your clients achieve their fitness goals?</summary>
-                <p>I provide my clients with detailed, easy to understand training programmes. I provide 24/7 support (if you ever question, even at 3AM on a Sunday, just ask!), Weekly check ins and so much more!</p>
-            </details>
+            <p class="mobile-about">
+                Online coaching is also the most cost-effective
+                way of hiring a coach. To break it down, the
+                average cost of a personal trainer can be
+                anywhere between £30-£40 per hour. If you
+                train 3 times a week with a personal trainer,
+                that's a monthly cost of £360-£480. That is for
+                12 hours worth of work a month! Whereas with
+                Online coaching you can get up to 30 hours
+                worth of personal training per month worth
+                £200. So, if you train 3 times a week, this would
+                work out as £16 per hour instead of the costly
+                £30-£40 per hour whilst getting the same, if not
+                better results as you would training Face to
+                Face! This also gets cheaper the more you train.
+                If you require 4 days of training out of the 7 days
+                per week. monthly that would add up to 16
+                hours per month which would be the equivalent
+                of £12.50 per hour! The more you train, the
+                cheaper it is, the better the results…
+            </p>
 
-            <details>
-                <summary>What's the secret to getting the body of your dreams?</summary>
-                <p>Your own mind. Discipline, consistency and the motivation to want to do well in the gym will help you achieve the body of your dreams in no time at all.</p>
-            </details>
-
-            <details>
-                <summary>What do you love most about your job?</summary>
-                <p>I love providing support and help for those who have set themselves a goal to
-                    achieve. It is so motivating for me seeing people with dreams and goals and
-                    working towards them. I have clients who have been with me for as short as 2
-                    weeks and already feel more confident and better about themselves. These types
-                    of messages motivates me to help more and more people.</p>
-            </details>
-
-            <details>
-                <summary>What inspired you to start your own business?</summary>
-                <p>I have dreams and goals to start my own gym chain for my clients and starting my
-                    gym business is one step in the right direction. The world has become more
-                    technologically advanced and if I can provide help to people from sitting at home
-                    then I can help so many people. It's only right to start my own business!</p>
-            </details>
-
-            <details>
-                <summary>Why should our clients choose you?</summary>
-                <p>There are lots of online coaches and personal trainer out there. The difference is
-                    between me and them is that I can guarantee 99% of online coaches and personal
-                    trainers have a bit of interest in the gym and see it is a well paying job. However,
-                    with myself I have spent almost half my life in the gym, ever since I was 12 years of
-                    age, training, bulking, cutting etc. The gym is all I know! This is the reason why I
-                    want to share my knowledge with clients so I can provide the best support
-                    possible for them to achieve their goals and dreams as I am just a person trying to
-                    achieve mine!
-                    </p>
-            </details>
-
-            <details>
-                <summary>Can you provide your services online or remotely? If so, please add
-                    details.</summary>
-                <p>I provide online services for everyone in the UK! I am primarily an online coach as i
-                    specialise in making and creating personalised training programmes for clients
-                    tailored to them!</p>
-            </details>
-
-            <details>
-                <summary>What changes have you made to keep your customers safe from Covid-
-                    19?</summary>
-                    <p>Thankfully, as I am an online coach, I can just create programmes for my clients to
-                        complete in the comfort of their own home if they do not feel safe in a public gym!</p>
-            </details>
+            <p class="mobile-about">
+                Join the team today! It does not matter where
+                you live in the UK, you can become apart of the
+                team as with online coaching you can take your
+                personalised program with you and I will only be
+                a text/phone call away if you have any questions
+                or require support. I offer 24/7 support so if you
+                have any questions or need any help I will reply
+                as soon as I see it!
+            </p>
 
         </div>
     {/if}
@@ -225,7 +216,6 @@ achieve their dreams and goals!
             background-image: url("https://i.ibb.co/3v3j5jy/home-mobile-background.jpg");    
             background-repeat: no-repeat;
             background-size: contain;
-            margin-top: 100px;
             height: calc(100vh - 100px);
         }
 
