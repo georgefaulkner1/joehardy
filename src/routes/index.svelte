@@ -9,6 +9,12 @@
         ready = true
     })
 
+    function DiscoverButton(){
+        return {
+            redirect: "/pricing"
+        }
+    }
+
 </script>
 
 
@@ -18,7 +24,7 @@
         <div class="hero index" in:fly={{ x: -200, duration: 2000 }} out:fade>
             <h2 class="header-title">Discover your Potential, the Hardy way!</h2>
             <h1>Personal training, Online Programs & Nutritional plans</h1>
-            <button>Discover your Potential</button>
+            <button on:click={DiscoverButton}>Discover your Potential</button>
         </div>
     {/if}
 </section>
