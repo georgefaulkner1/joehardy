@@ -380,7 +380,7 @@
         .pricing-box {
             margin-bottom: 10px;
             width: 300px;
-            height: 440px;
+            height: 450px;
         }
         
         .ind-short-desc p {
