@@ -18,52 +18,59 @@
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
             <h2 class="header-title">FAQs</h2>
 
-            <details>
-                <summary>How do you help your clients achieve their fitness goals?</summary>
-                <p>I provide my clients with detailed, easy to understand training programmes. I provide 24/7 support (if you ever question, even at 3AM on a Sunday, just ask!), Weekly check ins and so much more!</p>
-            </details>
+            <div class="family">
+                <details>
+                    <summary>How do you help your clients achieve their fitness goals?</summary>
+                    <p>I provide my clients with detailed, easy to understand training programmes. I provide 24/7 support (if you ever question, even at 3AM on a Sunday, just ask!), Weekly check ins and so much more!</p>
+                </details>
+    
+                <details>
+                    <summary>What's the secret to getting the body of your dreams?</summary>
+                    <p>Your own mind. Discipline, consistency and the motivation to want to do well in the gym will help you achieve the body of your dreams in no time at all.</p>
+                </details>
+            </div>
 
-            <details>
-                <summary>What's the secret to getting the body of your dreams?</summary>
-                <p>Your own mind. Discipline, consistency and the motivation to want to do well in the gym will help you achieve the body of your dreams in no time at all.</p>
-            </details>
+            <div class="family">
+                <details>
+                    <summary>What do you love most about your job?</summary>
+                    <p>I love providing support and help for those who have set themselves a goal to
+                        achieve. It is so motivating for me seeing people with dreams and goals and
+                        working towards them. I have clients who have been with me for as short as 2
+                        weeks and already feel more confident and better about themselves. These types
+                        of messages motivates me to help more and more people.</p>
+                </details>
+    
+                <details>
+                    <summary>What inspired you to start your own business?</summary>
+                    <p>I have dreams and goals to start my own gym chain for my clients and starting my
+                        gym business is one step in the right direction. The world has become more
+                        technologically advanced and if I can provide help to people from sitting at home
+                        then I can help so many people. It's only right to start my own business!</p>
+                </details>
+            </div>
 
-            <details>
-                <summary>What do you love most about your job?</summary>
-                <p>I love providing support and help for those who have set themselves a goal to
-                    achieve. It is so motivating for me seeing people with dreams and goals and
-                    working towards them. I have clients who have been with me for as short as 2
-                    weeks and already feel more confident and better about themselves. These types
-                    of messages motivates me to help more and more people.</p>
-            </details>
+            <div class="family">
+                <details>
+                    <summary>Why should our clients choose you?</summary>
+                    <p>There are lots of online coaches and personal trainer out there. The difference is
+                        between me and them is that I can guarantee 99% of online coaches and personal
+                        trainers have a bit of interest in the gym and see it is a well paying job. However,
+                        with myself I have spent almost half my life in the gym, ever since I was 12 years of
+                        age, training, bulking, cutting etc. The gym is all I know! This is the reason why I
+                        want to share my knowledge with clients so I can provide the best support
+                        possible for them to achieve their goals and dreams as I am just a person trying to
+                        achieve mine!
+                        </p>
+                </details>
+    
+                <details>
+                    <summary>Can you provide your services online or remotely?</summary>
+                    <p>I provide online services for everyone in the UK! I am primarily an online coach as i
+                        specialise in making and creating personalised training programmes for clients
+                        tailored to them!</p>
+                </details>
+            </div>
 
-            <details>
-                <summary>What inspired you to start your own business?</summary>
-                <p>I have dreams and goals to start my own gym chain for my clients and starting my
-                    gym business is one step in the right direction. The world has become more
-                    technologically advanced and if I can provide help to people from sitting at home
-                    then I can help so many people. It's only right to start my own business!</p>
-            </details>
-
-            <details>
-                <summary>Why should our clients choose you?</summary>
-                <p>There are lots of online coaches and personal trainer out there. The difference is
-                    between me and them is that I can guarantee 99% of online coaches and personal
-                    trainers have a bit of interest in the gym and see it is a well paying job. However,
-                    with myself I have spent almost half my life in the gym, ever since I was 12 years of
-                    age, training, bulking, cutting etc. The gym is all I know! This is the reason why I
-                    want to share my knowledge with clients so I can provide the best support
-                    possible for them to achieve their goals and dreams as I am just a person trying to
-                    achieve mine!
-                    </p>
-            </details>
-
-            <details>
-                <summary>Can you provide your services online or remotely?</summary>
-                <p>I provide online services for everyone in the UK! I am primarily an online coach as i
-                    specialise in making and creating personalised training programmes for clients
-                    tailored to them!</p>
-            </details>
 
             <details>
                 <summary>What changes have you made to keep your customers safe from Covid-
@@ -155,13 +162,14 @@
 
     details {
         border: 0px solid #fff;
-        width: 1200px;
+        width: calc(50% - 10px);
         border-radius: 6px;
         margin-bottom: 10px;
         padding-top: 22px;
         padding-bottom: 22px;
         background-color: #454E9E;
         transition: all 0.5s;
+        font-size: 14px;
     }
 
     details:hover {
@@ -182,10 +190,19 @@
     summary {
         text-align: justify;
         padding-left: 15px;
+        padding-right: 15px;
         font-weight: 800;
         margin-left: 15px;
         margin-right: 15px;
         width: 100%;
+        max-width: 400px;
+    }
+
+    .family {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: 0px solid #fff;
     }
 
 

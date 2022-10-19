@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env)
 import nodemailer from "nodemailer";
 
 export async function POST({ request }) {

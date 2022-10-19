@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="image-container">
-                    <img src="./about2.jpg" alt="">
+                    <img src="./about3.jpg" alt="">
                 </div>
 
 
