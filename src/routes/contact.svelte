@@ -1,6 +1,5 @@
 <script>
     import { fade, fly } from "svelte/transition"
-
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
 
@@ -14,6 +13,7 @@
     let email = ""
     let phone = ""
     let message = "";
+    let result = null
     let messagePending = false
 
     const validateEmail = (email) => {
@@ -25,34 +25,34 @@
         if(messagePending === false){
             if(validateEmail(email) && name.length > 1 && message.length > 1){
                 console.log("Called Mail")
+                /*
                 let res = await fetch("/sendContact", {
                     method: "POST",
-                    body: JSON.stringify({
-                        name,
-                        email,
-                        phone,
-                        message
-                    })
+                    body: JSON.stringify({name, email, phone, message})
                 })
-                
-                messagePending = true
 
-                const json = await res.json()
-                const result = JSON.stringify(json)
-
-                if(result){
-                    messagePending = false
-                    if(result.body.sent == "Confirmed"){
-                        alert("Message Sent!")
-                    }
+                if(res) {
+                    console.log(res)
                 }
 
-                console.log(result)
-            }else{
-                console.log(validateEmail(email))
-                console.log("Requirements not met")
-                messagePending = false
-            }   
+                
+                
+                fetch("/sendContact", {method: "POST", body: JSON.stringify({
+                            name,
+                            email,
+                            phone,
+                            message
+                    })}).then(response => {
+                    if (response.ok) {
+                        return response
+                    }
+                    return Promise.reject(Error('error'))
+                }).catch(error => {
+                    return Promise.reject(Error(error.message))
+                })
+                */
+                //messagePending = true  
+            }
         }
     }
 

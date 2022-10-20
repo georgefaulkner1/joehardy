@@ -112,6 +112,62 @@
 
             </div>
 
+            <div class="family">
+                <div class="group">
+                    <h2 class="header-title">Reviews</h2>
+                    <p>"Joe has really given me the
+                        confidence in my abilities, he has
+                        motivated and pushed me through
+                        my training as well as taught me and
+                        gave me loads of tips and tricks. He
+                        is so flexible and is always happy to
+                        adapt to my schedule. Especially as
+                        he's doing online coaching for me.
+                        This is really great."</p>
+    
+                    <p>
+                        “Me and my wife over the last 2 years
+    have worked with a few Personal
+    Trainers; 2 PTs from PureGym and 2
+    PTs from GriffinFit. When I started
+    looking (yet again) for another PT, I
+    wanted to work with some one who's
+    really passionate about fitness and
+    nutrition and would consistently be a
+    friendly voice encouraging you to
+    train smart and hard. This is exactly
+    what I've found working with Joe, his
+    ability to explain the changes your
+    body is (and will) go through in the
+    middle of the workout is really easy
+    to understand. I'd highly recommend
+    having Joe as a Personal Trainer
+    who'll help ingrain a passion for
+    fitness for life.”
+                    </p>
+    
+                    <p>
+                        “I've enjoyed working with Joe as a
+    personal trainer; he's really
+    understanding, motivating and
+    supportive. I've definitely seen the
+    benefits of online training as it's
+    flexible, easy to access and more
+    independent for the client; he's made
+    sure I've got my plan on time and it's
+    personal to me. I've made some
+    good progress in the past few weeks
+    thanks to Joe and would highly
+    recommend his services!”
+                    </p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://i.ibb.co/0sHDYHV/training.jpg" alt="">
+                </div>
+                
+            </div>
+
         </div>
     {/if}
 </section>
@@ -320,6 +376,32 @@
         text-align: justify;
     }
 
+    .family {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: 0px solid #fff;
+    }
+
+    .group {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0px solid #fff;
+    }
+
+    .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .image-container img {
+        height: 400px;
+        box-shadow: inset 0 0 100px black;
+    }
+
     /* Small Device */
     @media only screen and (max-width: 768px) {
         section h1 {
@@ -395,6 +477,23 @@
             font-weight: 600;
             font-size: 14px;
             margin-top: 5px;
+        }
+
+        .family {
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            height: 200px;
+            box-shadow: inset 0 0 100px black;
+        }
+
+        .group {
+            width: 100%;
+        }
+
+        .image-container {
+            width: 100%;
         }
     }
 

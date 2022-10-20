@@ -35,9 +35,14 @@
                 achieve their dreams and goals!
             </p>
 
-            <div class="family">
+            <div class="image-container">
+                <img src="https://i.ibb.co/gZz275P/transformation.jpg" alt="">
+            </div>
 
+            <div class="family">
+                
                 <div class="group">
+                    <h2 class="header-title">Online Coaching</h2>
                     <p class="mobile-about">
                         I offer a number of different services to help you
                         achieve your goals. Online coaching is the most

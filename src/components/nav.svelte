@@ -90,7 +90,7 @@ nav {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 nav a {
@@ -98,6 +98,11 @@ nav a {
     color: #fff;
     font-weight: 600;
     text-decoration: none;
+}
+
+nav .logo {
+    width: 200px;
+    height: 200px;
 }
 
 nav .logo img {

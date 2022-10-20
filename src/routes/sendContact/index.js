@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import consumers from "stream/consumers"
 
 export async function POST({ request }) {
   const data = await request.json()
@@ -9,41 +10,55 @@ export async function POST({ request }) {
   if(name.length > 1 && email.length > 1 && message.length > 1){
 
     var transporter = nodemailer.createTransport({
-      service: "gmail", //process.env.emailService
+      service: process.env.emailService, //process.env.emailService
       auth: {
-        user: "gfaulkner675@gmail.com", //process.env.emailAuth
-        pass: "zusxhjwzexfaqkbj" //process.env.emailPassword
+        user: process.env.emailAuth, //process.env.emailAuth
+        pass: process.env.emailPassword //process.env.emailPassword
       }
     })
 
     var mailOptions = {
       from: 'Website Questions',
-      to: "gfaulkner675@gmail.com", //process.env.emailTo
+      to: process.env.emailTo, //process.env.emailTo
       subject: 'Website Question',
       html: `Name: <b>${name}</b> <br>Phone: <b>${phone}</b> <br>Email: <b>${email}</b> <br>Message: <b>${message}</b>  `
     }
 
+
     console.log("Send")
-    transporter.sendMail(mailOptions, function(error, info){
-      console.log("Sending")
-      console.log(info)
-      if (error) {
-        console.log(error);
-        return {
-          body: {error}
+
+    try {
+
+      transporter.sendMail(mailOptions, async function(error, info){
+        console.log("Sending")
+        console.log("Info: ", info)
+        console.log("Err: ", error)
+
+        if(info) {
+          return {
+            body: {status: 200}, status: 200
+          }
+        }else{
+          if(error) {
+            return {
+              body: {status: 400}, status: 400
+            }
+          }
         }
-      } else {
-        console.log('Email sent: ' + info.response);
-        return {
-          body: { sent: "Confirmed"}
-        }
+  
+      })
+
+    }catch(error){
+      console.log(">>>", error)
+      return {
+        body: {status: 400}, status: 400
       }
-    })
+    }
 
   }else {
     console.log("Info Not corr")
     return {
-      body: {error: 400}
+      body: {status: 400}, status: 400
     }
   }
 
