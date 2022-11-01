@@ -180,7 +180,7 @@ nav .logo img {
         nav .logo img {
             width: 60px !important;
             height: 60px !important;
-            margin-top: 60px;
+            margin-top: 60px !important;
         }
 
         .drop-down-menu {
