@@ -1,50 +1,4 @@
 
-const nodemailer = require("nodemailer")
-
-
-export async function POST({ request }) {
-  const data = await request.json()
-  console.log(data)
-  
-  const {name, email, phone, message} = JSON.parse(JSON.stringify(data))
-
-  if(name.length > 1 && email.length > 1 && message.length > 1){
-
-    console.log(`> Send Email - from ${email}`)
-
-    var transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "gfaulkner675@gmail.com",
-        pass: "zusxhjwzexfaqkbj"
-      }
-    })
-
-    var mailOptions = {
-      from: "Website Question",
-      to: "gfaulkner675@gmail.com",
-      subject: "Website Question",
-      html: `Name: <b>${name}</b> <br>Phone: <b>${phone}</b> <br>Email: <b>${email}</b> <br>Message: <b>${message}</b>  `
-    }
-
-    transporter.sendMail(mailOptions, async function(error, info){
-      if(info) {
-        return {
-          status: 200,
-          body: {message: "Email sent!"}
-        }
-      }
-
-      if(info) {
-        return {
-          status: 400,
-          body: {message: "Email Failed!"}
-        }
-      }
-    }
-
-  }
-}
 
 /* 
       var transporter = nodemailer.createTransport({
@@ -132,4 +86,53 @@ export async function POST({ request }) {
         }
       });
       
+*/
+/*
+      
+const nodemailer = require("nodemailer")
+
+
+export async function POST({ request }) {
+  const data = await request.json()
+  console.log(data)
+  
+  const {name, email, phone, message} = JSON.parse(JSON.stringify(data))
+
+  if(name.length > 1 && email.length > 1 && message.length > 1){
+
+    console.log(`> Send Email - from ${email}`)
+
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "gfaulkner675@gmail.com",
+        pass: "zusxhjwzexfaqkbj"
+      }
+    })
+
+    var mailOptions = {
+      from: "Website Question",
+      to: "gfaulkner675@gmail.com",
+      subject: "Website Question",
+      html: `Name: <b>${name}</b> <br>Phone: <b>${phone}</b> <br>Email: <b>${email}</b> <br>Message: <b>${message}</b>  `
+    }
+
+    transporter.sendMail(mailOptions, async function(error, info){
+      if(info) {
+        return {
+          status: 200,
+          body: {message: "Email sent!"}
+        }
+      }
+
+      if(info) {
+        return {
+          status: 400,
+          body: {message: "Email Failed!"}
+        }
+      }
+    }
+
+  }
+}
 */
