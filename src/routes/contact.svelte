@@ -9,6 +9,15 @@
         //sendMail()
     })
 
+    
+
+    
+
+</script>
+
+
+<script context="module">
+
     let name = ""
     let email = ""
     let phone = ""
@@ -16,46 +25,37 @@
     let result = null
     let messagePending = false
 
-    const validateEmail = (email) => {
+        const validateEmail = (email) => {
         var re = /\S+@\S+\.\S+/
         return re.test(email)
     }
 
     async function sendMail(){
-        if(messagePending === false){
+        if(messagePending == false){
             if(validateEmail(email) && name.length > 1 && message.length > 1){
                 console.log("Called Mail")
-                /*
-                let res = await fetch("/sendContact", {
+                messagePending = true
+                console.log(messagePending)
+                const res = await fetch("http://localhost:3000/sendEmail", {
                     method: "POST",
+                    credentials: 'same-origin', // include, *same-origin,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        auth: "123Token",
+                        accept: '*/*',
+                        connection: 'keep-alive'
+                    },
                     body: JSON.stringify({name, email, phone, message})
                 })
 
-                if(res) {
-                    console.log(res)
-                }
 
-                
-                
-                fetch("/sendContact", {method: "POST", body: JSON.stringify({
-                            name,
-                            email,
-                            phone,
-                            message
-                    })}).then(response => {
-                    if (response.ok) {
-                        return response
-                    }
-                    return Promise.reject(Error('error'))
-                }).catch(error => {
-                    return Promise.reject(Error(error.message))
-                })
-                */
-                //messagePending = true  
+                const response = await res.json()
+                messagePending = false
+                console.log(response)
+                console.log(messagePending)
             }
         }
     }
-
 </script>
 
 
@@ -63,36 +63,40 @@
 <section class="home" id="home">
     {#if ready}
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
-            <h2 class="header-title">Contact me!</h2>
-            <p>Want more information? Get in touch below.</p>
+            {#if messagePending}
+                <h1>SENDING MAIL</h1>
+            {/if}
+            {#if !messagePending}
+                <h2 class="header-title">Contact me!</h2>
+                <p>Want more information? Get in touch below.</p>
 
-            <div class="email-contact">
-                <div class="inputBox">
-                    <label>Name *</label>
-                    <input type="text" id="nameInput" bind:value={name}/>
-                </div>
-
-                
-                <div class="inputBox">
-                    <label>Email *</label>
-                    <input type="text" id="emailInput" bind:value={email}/>
-                </div>
+                <div class="email-contact">
+                    <div class="inputBox">
+                        <label>Name *</label>
+                        <input type="text" id="nameInput" bind:value={name}/>
+                    </div>
 
                 
-                <div class="inputBox">
-                    <label>Mobile number</label>
-                    <input type="number" id="mobileNumberInput" bind:value={phone}/>
+                    <div class="inputBox">
+                        <label>Email *</label>
+                        <input type="text" id="emailInput" bind:value={email}/>
+                    </div>
+
+                
+                    <div class="inputBox">
+                        <label>Mobile number</label>
+                        <input type="number" id="mobileNumberInput" bind:value={phone}/>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Message *</label>
+                        <textarea id="messageInput" bind:value={message}></textarea>
+                    </div>
+
+                    <button on:click={sendMail}>Send message</button>
+
                 </div>
-
-                <div class="inputBox">
-                    <label>Message *</label>
-                    <textarea id="messageInput" bind:value={message}></textarea>
-                </div>
-
-                <button on:click={sendMail}>Send message</button>
-
-            </div>
-
+            {/if}
         </div>
     {/if}
 </section>
