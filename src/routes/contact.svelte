@@ -2,6 +2,7 @@
     import { fade, fly } from "svelte/transition"
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
+    import axios from "axios"
 
     let ready = false
     onMount(async () => {
@@ -9,66 +10,84 @@
         //sendMail()
     })
 
-    
-
-    
-
-</script>
-
-
-<script context="module">
-
+    let messagePending = false
     let name = ""
     let email = ""
     let phone = ""
     let message = "";
-    let result = null
-    let messagePending = false
-
-        const validateEmail = (email) => {
-        var re = /\S+@\S+\.\S+/
-        return re.test(email)
-    }
-
+    let report = {returned: false, message: ""}
+    
     async function sendMail(){
-        if(messagePending == false){
-            if(validateEmail(email) && name.length > 1 && message.length > 1){
-                console.log("Called Mail")
-                messagePending = true
-                console.log(messagePending)
-                const res = await fetch("http://localhost:3000/sendEmail", {
-                    method: "POST",
-                    credentials: 'same-origin', // include, *same-origin,
-                    headers: {
-                        'Content-Type': 'application/json',
-                        auth: "123Token",
-                        accept: '*/*',
-                        connection: 'keep-alive'
+        messagePending = true
+
+        if(name.length > 1 && email.length > 1 && message.length > 1){
+            //Call
+            try {
+                const res = await axios.post("https://server-brown-seven.vercel.app/email", {
+                    data: {
+                        name, email, phone, message
                     },
-                    body: JSON.stringify({name, email, phone, message})
+                    auth: {
+                        token: process.env.siteAuth
+                    }
                 })
-
-
-                const response = await res.json()
-                messagePending = false
-                console.log(response)
-                console.log(messagePending)
+                console.log(res)
+                const {data} = res
+                messagePending = false  
+                if(data.status == 200){
+                    name = ""
+                    email = ""
+                    phone = ""
+                    message = "";
+                    report = {returned: true, message: "Email Sent!"}
+                    setTimeout(function(){
+                        report = {returned: false, message: ""}
+                    }, 5000)
+                }
+                if(data.status != 200){
+                    report = {returned: true, message: data.message}
+                    setTimeout(function(){
+                        report = {returned: false, message: ""}
+                    }, 5000)
+                }
+            } catch(err) {
+                console.log(err)
+                messagePending = false  
+                report = {returned: true, message: err}
+                setTimeout(function(){
+                    report = {returned: false, message: ""}
+                }, 5000)
             }
+        }else{
+            //Error
+            messagePending = false
+            report = {returned: true, message: "All (*) inputs are required!"}
+            setTimeout(function(){
+                report = {returned: false, message: ""}
+            }, 5000)
         }
+
     }
+    
+
 </script>
-
-
 
 <section class="home" id="home">
     {#if ready}
         <div class="hero" in:fly={{ x: -200, duration: 2000 }} out:fade>
             {#if messagePending}
-                <h1>SENDING MAIL</h1>
+                <div class="loadingBar">
+                    <div class="loader"></div>
+                    <p>Sending Email...</p>
+                </div>
             {/if}
             {#if !messagePending}
                 <h2 class="header-title">Contact me!</h2>
                 <p>Want more information? Get in touch below.</p>
+
+                {#if report.returned == true}
+                    <p>{report.message}</p>
+                {/if}
 
                 <div class="email-contact">
                     <div class="inputBox">
@@ -203,6 +222,33 @@
 
     .inputBox textarea {
         height: 100px;
+    }
+
+    .loader {
+        border: 6px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 6px solid #454E9E;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loadingBar {
+        width: 100%;
+        height: 100vh;
+        margin-top: 50px;
     }
 
     /* Small Device */
