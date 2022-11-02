@@ -3,8 +3,6 @@
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
     import axios from "axios"
-    import * as dotenv from "dotenv"
-    const NODE_ENV = process.env.NODE_ENV;
 
 
     let ready = false
@@ -31,7 +29,7 @@
                         name, email, phone, message
                     },
                     auth: {
-                        token: process.env.siteAuth
+                        token: "joeskeycode187"
                     }
                 })
                 console.log(res)
