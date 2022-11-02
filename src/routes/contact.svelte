@@ -3,7 +3,7 @@
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
     import axios from "axios"
-    require('dotenv').config()
+    import * as dotenv from "dotenv"
 
 
     let ready = false
