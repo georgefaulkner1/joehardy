@@ -4,6 +4,7 @@
     import { onMount } from "svelte"
     import axios from "axios"
     import * as dotenv from "dotenv"
+    const NODE_ENV = process.env.NODE_ENV;
 
 
     let ready = false
