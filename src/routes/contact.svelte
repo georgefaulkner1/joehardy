@@ -3,7 +3,6 @@
     import Nav from "../components/nav.svelte"
     import { onMount } from "svelte"
     import axios from "axios"
-    import { env } from '$env/dynamic/private';
     import * as dotenv from "dotenv"
 
 
