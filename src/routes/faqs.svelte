@@ -281,6 +281,7 @@
         transition: all 0.5s;
         font-size: 14px;
         height: fit-content;
+        min-height: 40px;
     }
 
     details:hover {
