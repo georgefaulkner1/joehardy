@@ -175,12 +175,13 @@ nav .logo img {
 
         nav .logo {
             margin-left: 20px;
+            height: 60px;
+            width: 60px;
         }
 
         nav .logo img {
             width: 60px !important;
             height: 60px !important;
-            margin-top: 60px !important;
         }
 
         .drop-down-menu {
