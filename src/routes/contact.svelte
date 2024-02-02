@@ -22,6 +22,10 @@
         messagePending = true
 
         if(name.length > 1 && email.length > 1 && message.length > 1){
+
+            setTimeout(e => {
+                messagePending = false
+            }, 2000)
             //Call
             /*
             try {
