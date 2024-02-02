@@ -23,6 +23,7 @@
 
         if(name.length > 1 && email.length > 1 && message.length > 1){
             //Call
+            /*
             try {
                 const res = await axios.post("https://server-brown-seven.vercel.app/email", {
                     data: {
@@ -36,7 +37,7 @@
                         token: "joeskeycode187"
                     }
                 })
-                console.log(res)
+
                 const {data} = res
                 messagePending = false  
                 if(data.status == 200){
@@ -56,13 +57,15 @@
                     }, 5000)
                 }
             } catch(err) {
-                console.log(err)
+
                 messagePending = false  
                 report = {returned: true, message: err}
                 setTimeout(function(){
                     report = {returned: false, message: ""}
                 }, 5000)
             }
+*/
+            
         }else{
             //Error
             messagePending = false
